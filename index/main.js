@@ -1,9 +1,5 @@
-const url = "http://localhost:3000/indicadores";
+function pao(){
+	let valor = document.getElementById("initial-contribution").value;
 
-
-fetch((url)).then((res)=>{
-    res.json()
-
-}).then((data)=>{
-    console.log(data)
-})
+console.log(typeof valor)
+}
