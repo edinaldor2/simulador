@@ -13,25 +13,99 @@
 				<div class="title">
 					<h1>Simulador de Investimentos</h1>
 				</div>
-				<section class="container-simulator">
+				<section class="container-simulator" style>
 					<div class="simulator">
 						<h2>Simulador</h2>
 						<div id="container-forms">
-							<div id="primary-form form">
-								<div id="rendimento">
-									<div class="filtros">
-										<span><small>Redimento</small></span>
+							<form action="" method="get">
 
-									</div>
-									<div class="box"></div>
-								</div>
-								<form action="">
-									<label for="">
 
-									</label>
-								</form>
-								<form action=""></form>
+
+
+								<small>Rendimentos</small>
+
+
+
+
+								<ul class="payment-methods">
+									<li class="payment-method bruto">
+										<input type="radio" name="bruto" id="bruto">
+										<label for="bruto">Bruto</label>
+									</li> 
+
+									 
+									<li class="payment-method liquido">
+										<input type="radio" name="liquido" id="liquido">
+										<label for="liquido">liquido</label>
+									</li>
+								</ul>
+
+
+
+
+
+
+								<label for="aporte-inicial">
+									<p><small>Aporte inicial</small></p>
+									<input type="number" name="aporte-inicial" id="aporte-inicial">
+								</label><br>
+								<label for="prazo">
+									<p><small>Prazo (em meses)</small></p>
+									<input type="number" name="prazo" id="prazo">
+								</label><br>
+								<label for="ipca">
+									<p><small>IPCA(ao ano)</small></p>
+									<input type="number" name="ipca" id="ipca">
+								</label>
+
+							</form>
+							<form action="" method="get">
+
+
+
+
+								<small>Rendimentos</small>
+
+
+
+
+								<ul class="payment-methods">
+									<li class="payment-method bruto">
+										<input type="radio" name="bruto" id="bruto">
+										<label for="bruto">Bruto</label>
+									</li> 
+
+									 
+									<li class="payment-method liquido">
+										<input type="radio" name="liquido" id="liquido">
+										<label for="liquido">liquido</label>
+									</li>
+								</ul>
+
+
+
+
+
+
+								<label for="aporte-mensal">
+									<p><small>Aporte Mensal</small></p>
+									<input type="number" name="aporte-mensal" id="aporte-mensal">
+								</label><br>
+								<label for="rentabilidade">
+									<p><small>Rentabilidade</small></p>
+									<input type="number" name="prazo" id="prazo">
+								</label><br>
+								<label for="cdi">
+									<p><small>CDI(ao ano)</small></p>
+									<input type="number" name="cdi" id="cdi">
+								</label>
+
+							</form>
 							</div>
+						</div>
+						<div class="container-buttons">
+							<button id="limpar">Limpar campos</button>
+							<button id="simular">Simular</button>
 						</div>
 					</div>
 				</section>

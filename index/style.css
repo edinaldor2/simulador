@@ -27,15 +27,118 @@
 	text-align: center;
 	margin: 10px 0px;
 }
+.container-simulator{
+	width: max-content;
+}
 #container-forms {
 	max-width: 500px;
-	background: red;
+	margin-top: 10px;
 	display: flex;
 
 	gap: 40px;
 }
-#container-buttons {
-	left: 300px;
-	top: 0;
-	bottom: 100%;
+form{
+	display: flex;
+	flex-direction: column;
 }
+label{
+	max-width: max-content;
+	
+}
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type="number"]
+{
+	margin-top: 10px;
+	border-width: 0 0 1px 0;
+	background-color: transparent;
+	
+	-moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+label p {
+	font-size: 12px;
+}
+.container-buttons{
+text-align: center;
+margin: 20px 0 ;
+}
+button{
+	
+	width: 180px;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: all 1s ease;
+}
+button:hover{
+	background-color: var(--color2);
+	width: 180px;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+#simular{
+	background-color: var(--color3);
+	border:1px solid var(--color3);
+}#simular:hover{
+	background-color: var(--color2);
+	border:1px solid var(--color3);
+}
+
+
+
+
+
+
+
+
+
+
+/* rnedimentos */
+.payment-methods {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.payment-methods:after {
+	content: "";
+	clear: both;
+}
+.payment-method {
+	border: 1px solid black;
+	float: left;
+	height: 30px;
+	box-sizing: border-box;
+	position: relative;
+	width:60px;
+}
+.payment-method + .payment-method {
+	margin-left: 25px;
+}
+.payment-method label {
+	background: #fff no-repeat center center;
+	bottom: 1px;
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	font-size: 0;
+	left: 1px;
+	text-indent: 100%;
+	top: 1px;
+	right: 1px;
+	white-space: nowrap;
+}
+.liquido label {
+	content: "Liquido";
+	
+}
+.bruto label {
+	content: "bruto";
+	
+}
+/* INPUTS */
