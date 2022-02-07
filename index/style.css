@@ -60,14 +60,12 @@
 	width: max-content;
 	padding: 12px;
 	height: 40px;
-	
 }
 #pre {
 	border-radius: 5px 0px 0px 5px;
 }
-#pos{
-border-width: 2px;
-
+#pos {
+	border-width: 2px;
 }
 #fixado {
 	border-radius: 0px 5px 5px 0px;
@@ -80,26 +78,29 @@ form {
 label {
 	max-width: max-content;
 }
-/*formataçao dos inputs */
-input[type="number"]::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-}
-input[type="number"] {
+
+input[type="text"] {
 	margin-top: 10px;
 	border-width: 0 0 1px 0;
 	background-color: transparent;
-padding: 2px;
+	
+	padding: 2px;
 	-moz-appearance: textfield;
 	appearance: textfield;
 }
-input[type="number"]:focus {
+input[type="text"]:focus {
 	box-shadow: 0 0 0 0;
-    border: 0 none 1px;
-    outline: 0;
+	border: 0 none 1px;
+	outline: 0;
+}
+span {
+	color: red;
+	font-size: small;
+	display: none;
 }
 
 label p {
-	font-size: 12px;
+	font-size: 13px;
 }
 /* butoes de açoes */
 .container-buttons {
@@ -132,10 +133,4 @@ label p {
 }
 button:hover {
 	cursor: pointer;
-}
-
-
-
-.container-index{
-
 }

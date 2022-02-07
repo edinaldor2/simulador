@@ -27,21 +27,27 @@
 								<div class="container-rend-index">
 									<button id="liquido" class="rend" onclick="color()">Líquido</button>
 									<button id="bruto" class="rend">bruto</button>
+
 								</div>
 
 
 
 								<label for="aporte-inicial">
 									<p><small>Aporte inicial</small></p>
-									<input type="number" name="aporte-inicial" id="aporte-inicial">
+									<input onkeyup="validar()" type="text" name="aporte-inicial" id="aporte-inicial" class="text">
+									<br>
+									<span><small>Aporte tem que ser um número.</small></span>
 								</label><br>
-								<label for="prazo">
+								<label id="prazo" for="prazo">
 									<p><small>Prazo (em meses)</small></p>
-									<input type="number" name="prazo" id="prazo">
+									<input onkeyup="validar()" type="text" class="text"name="prazo" >
+									
+									<span><small>Prazo tem que ser um número.</small></span>
 								</label><br>
 								<label for="ipca">
 									<p><small>IPCA(ao ano)</small></p>
-									<input type="number" name="ipca" id="ipca">
+									<input type="text" name="ipca" id="ipca" readonly>
+									
 								</label>
 
 							</form>
@@ -68,15 +74,20 @@
 
 								<label for="aporte-mensal">
 									<p><small>Aporte Mensal</small></p>
-									<input type="number" name="aporte-mensal" id="aporte-mensal">
+									<input onkeyup="validar()" class="text" type="text" name="aporte-mensal" id="aporte-mensal">
+									<br>
+									<span><small>Aporte tem que ser um número.</small></span>
 								</label><br>
 								<label for="rentabilidade">
 									<p><small>Rentabilidade</small></p>
-									<input type="number" name="prazo" id="prazo">
+		
+									<input onkeyup="validar()" class="text" type="text" name="rentabilidade" id="rentabilidade">
+									<br>
+									<span><small>Rentabilidade tem que ser um número.</small></span>
 								</label><br>
 								<label for="cdi">
 									<p><small>CDI(ao ano)</small></p>
-									<input type="number" name="cdi" id="cdi">
+									<input type="text" name="cdi" id="cdi" readonly >
 								</label>
 
 							</form>
