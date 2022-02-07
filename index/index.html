@@ -13,7 +13,7 @@
 				<div class="title">
 					<h1>Simulador de Investimentos</h1>
 				</div>
-				<section class="container-simulator" style>
+				<section class="container-simulator" >
 					<div class="simulator">
 						<h2>Simulador</h2>
 						<div id="container-forms">
@@ -24,24 +24,10 @@
 
 								<small>Rendimentos</small>
 
-
-
-
-								<ul class="payment-methods">
-									<li class="payment-method bruto">
-										<input type="radio" name="bruto" id="bruto">
-										<label for="bruto">Bruto</label>
-									</li> 
-
-									 
-									<li class="payment-method liquido">
-										<input type="radio" name="liquido" id="liquido">
-										<label for="liquido">liquido</label>
-									</li>
-								</ul>
-
-
-
+								<div class="container-rend-index">
+									<button id="liquido" class="rend" onclick="color()">Líquido</button>
+									<button id="bruto" class="rend">bruto</button>
+								</div>
 
 
 
@@ -64,24 +50,17 @@
 
 
 
-								<small>Rendimentos</small>
+								<small>Tipos de indexação</small>
 
 
 
 
-								<ul class="payment-methods">
-									<li class="payment-method bruto">
-										<input type="radio" name="bruto" id="bruto">
-										<label for="bruto">Bruto</label>
-									</li> 
-
-									 
-									<li class="payment-method liquido">
-										<input type="radio" name="liquido" id="liquido">
-										<label for="liquido">liquido</label>
-									</li>
-								</ul>
-
+								
+								<div class="container-rend-index">
+									<button id="pre" class="index">PRÉ</button>
+									<button id="pos" class="index">POS</button>
+									<button id="fixado" class="index">FIXADO</button>
+								</div>
 
 
 
@@ -104,13 +83,13 @@
 							</div>
 						</div>
 						<div class="container-buttons">
-							<button id="limpar">Limpar campos</button>
-							<button id="simular">Simular</button>
+							<button class="acoes" id="limpar">Limpar campos</button>
+							<button class="acoes" id="simular">Simular</button>
 						</div>
 					</div>
 				</section>
 			</main>
 		</div>
 	</body>
-	<script src="main.js"></script>
+	<script src="main.js">   </script>
 </html>

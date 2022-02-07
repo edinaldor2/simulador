@@ -1,5 +1,5 @@
-function pao(){
-	let valor = document.getElementById("initial-contribution").value;
+/*mudar a cor do butoes e acrescentar um checked
+*/
 
-console.log(typeof valor)
-}
+
+
