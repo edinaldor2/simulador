@@ -37,7 +37,6 @@ let prazo = (prazo, label, span) => {
 		label.style = "";
 		span.style.display = "";
 		prazo.style = "";
-		
 	} else {
 		console.log("label");
 		label.style = "color:red;";
@@ -45,28 +44,20 @@ let prazo = (prazo, label, span) => {
 		prazo.style = "border-color:red";
 	}
 };
-aporteMensal= (aporteM, label, span) => {
+aporteMensal = (aporteM, label, span) => {
 	let aporteMensal = Number(aporteM.value);
 
 	if (aporteMensal > 1 || aporteMensal == "") {
 		label.style = "";
 		span.style.display = "";
 		aporteM.style = "";
-		
-		
 	} else {
 		console.log("label");
 		label.style = "color:red;";
 		span.style.display = "block";
 		aporteM.style = "border-color:red";
 	}
-	
-
 };
-
-
-
-
 
 
 
@@ -95,3 +86,6 @@ let cdi = (valueCdi) => {
 	cdi.value = `${valueCdi}%`;
 	console.log(cdi);
 };
+
+
+

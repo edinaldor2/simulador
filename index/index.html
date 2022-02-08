@@ -13,94 +13,103 @@
 				<div class="title">
 					<h1>Simulador de Investimentos</h1>
 				</div>
-				<section class="container-simulator" >
-					<div class="simulator">
-						<h2>Simulador</h2>
-						<div id="container-forms">
-							<form action="" method="get">
-
-
-
-
-								<small>Rendimentos</small>
-
-								<div class="container-rend-index">
-									<button id="liquido" class="rend" onclick="color()">Líquido</button>
-									<button id="bruto" class="rend">bruto</button>
-
-								</div>
-
-
-
-								<label class="cont-inputs"  for="aporte-inicial">
-									<p><small>Aporte inicial</small></p>
-									<input onkeyup="validar()" type="text" name="aporte-inicial" id="aporte-inicial" class="text" >
-									
-									<span><small>Aporte tem que ser um número.</small></span>
-								</label><br>
-								<label class="cont-inputs" for="prazo">
-									<p><small>Prazo (em meses)</small></p>
-									<input onkeyup="validar()" type="text" class="text"name="prazo" id="prazo">
-									
-									<span><small>Prazo tem que ser um número.</small></span>
-								</label><br>
-								<label for="ipca">
-									<p><small>IPCA(ao ano)</small></p>
-									<input type="text" name="ipca" id="ipca" readonly>
-									
-								</label>
-
-							</form>
-							<form action="" method="get">
-
-
-
-
-								<small>Tipos de indexação</small>
-
-
-
-
+				<div id="container-sections">
+					<section class="container-simulator">
+						<div class="simulator">
+							<h2>Simulador</h2>
+							<div id="container-forms">
+								<form action="" method="get">
+									<div>
+										<small>Rendimentos</small>
+										<div class="container-rend-index">
+											<button id="liquido" class="rend" onclick="color()">
+												Líquido
+											</button>
+											<button id="bruto" class="rend">bruto</button>
+										</div>
+										<label class="cont-inputs" for="aporte-inicial">
+											<p><small>Aporte inicial</small></p>
+											<input
+												onkeyup="validar()"
+												type="text"
+												name="aporte-inicial"
+												id="aporte-inicial"
+												class="text"
+											/>
+											<span
+												><small>Aporte tem que ser um número.</small></span
+											> </label
+										><br />
+										<label class="cont-inputs" for="prazo">
+											<p><small>Prazo (em meses)</small></p>
+											<input
+												onkeyup="validar()"
+												type="text"
+												class="text"
+												name="prazo"
+												id="prazo"
+											/>
+											<span
+												><small>Prazo tem que ser um número.</small></span
+											> </label
+										><br />
+										<label for="ipca">
+											<p><small>IPCA(ao ano)</small></p>
+											<input type="text" name="ipca" id="ipca" readonly />
+										</label>
+										
+									</div>
+									<div>
+										
+										<small>Tipos de indexação</small>
+										<div class="container-rend-index">
+											<button id="pre" class="index">PRÉ</button>
+											<button id="pos" class="index">POS</button>
+											<button id="fixado" class="index">FIXADO</button>
+										</div>
+										<label class="cont-inputs" for="aporte-mensal">
+											<p><small>Aporte Mensal</small></p>
+											<input
+												onkeyup="validar()"
+												class="text"
+												type="text"
+												name="aporte-mensal"
+												id="aporte-mensal"
+											/>
+											<span
+												><small>Aporte tem que ser um número.</small></span
+											> </label
+										><br />
+										<label class="cont-inputs" for="rentabilidade">
+											<p><small>Rentabilidade</small></p>
+											<input
+												onkeyup="validar()"
+												class="text"
+												type="text"
+												name="rentabilidade"
+												id="rentabilidade"
+											/>
+											<span
+												><small>Rentabilidade tem que ser um número.</small></span
+											> </label
+										><br />
+										<label for="cdi">
+											<p><small>CDI(ao ano)</small></p>
+											<input type="text" name="cdi" id="cdi" readonly />
+										</label>
+									</div>
+								</form>
 								
-								<div class="container-rend-index">
-									<button id="pre" class="index">PRÉ</button>
-									<button id="pos" class="index">POS</button>
-									<button id="fixado" class="index">FIXADO</button>
-								</div>
-
-
-
-
-
-								<label  class="cont-inputs"  for="aporte-mensal">
-									<p><small>Aporte Mensal</small></p>
-									<input onkeyup="validar()" class="text" type="text" name="aporte-mensal" id="aporte-mensal">
-									
-									<span><small>Aporte tem que ser um número.</small></span>
-								</label><br>
-								<label  class="cont-inputs"  for="rentabilidade">
-									<p><small>Rentabilidade</small></p>
-		
-									<input onkeyup="validar()" class="text" type="text" name="rentabilidade" id="rentabilidade">
-									
-									<span><small>Rentabilidade tem que ser um número.</small></span>
-								</label><br>
-								<label for="cdi">
-									<p><small>CDI(ao ano)</small></p>
-									<input type="text" name="cdi" id="cdi" readonly >
-								</label>
-
-							</form>
 							</div>
 						</div>
 						<div class="container-buttons">
 							<button class="acoes" id="limpar">Limpar campos</button>
 							<button class="acoes" id="simular">Simular</button>
 						</div>
-					</div>
-				</section>
+					</section>
+				</div>
 			</main>
 		</div>
 	</body>
-	<script src="main.js">   </script>
+	<script src="main.js"></script>
 </html>
