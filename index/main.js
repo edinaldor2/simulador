@@ -4,55 +4,73 @@
 // validando os  inputs
 
 function validar() {
-	
-	// var aporteInicial = document.getElementsByClassName("text")[0];
-	prazo();
+	let input = document.getElementsByClassName("text");
+	let label = document.getElementsByClassName("cont-inputs");
 
-	// let aporteMensal = document.getElementsByClassName("text")[2];
-	// let rentabilidade = document.getElementsByClassName("text")[3];
+	let span = document.getElementsByTagName("span");
+
+	aporteInicial(input[0], label[0], span[0]);
+	prazo(input[1], label[1], span[1]);
+
+	aporteMensal(input[2], label[2], span[2]);
 }
 
-let aporteInicial = () => {
-	let aporteInicial = document.getElementsByClassName("text")[0].value;
-	let aporteInicialNumber = Number(aporteInicial);
-	// span , label , input
-	let span = document.getElementsByTagName("span")[0];
-	let label = document.getElementById("prazo");
-	let input = document.getElementsByName("prazo")[0];
+let aporteInicial = (aporte, label, span) => {
+	let aporteInicial = Number(aporte.value);
 
-	if (aporteInicialNumber > 0 || aporteInicialNumber == "") {
-		console.log("ok");
-
-		label.style.color = "";
-		input.style = "";
+	if (aporteInicial > 1 || aporteInicial == "") {
+		label.style = "";
 		span.style.display = "";
+		aporte.style = "";
 	} else {
-		label.style.color = "red";
-		input.style = "border-color:red";
+		console.log("label");
+		label.style = "color:red;";
 		span.style.display = "block";
+		aporte.style = "border-color:red";
 	}
 };
-let prazo = () => {
-	let prazo = document.getElementsByClassName("text")[1].value;
-	let prazoNumber = Number(prazo);
-	// span , label , input
-	let span = document.getElementsByTagName("span")[1];
-	let label = document.getElementById("prazo");
-	let input = document.getElementsByName("prazo")[0];
+
+let prazo = (prazo, label, span) => {
+	let prazoNumber = Number(prazo.value);
 
 	if (prazoNumber > 0 || prazoNumber == "") {
-		console.log("ok");
-
-		label.style.color = "";
-		input.style = "";
+		label.style = "";
 		span.style.display = "";
+		prazo.style = "";
+		
 	} else {
-		label.style.color = "red";
-		input.style = "border-color:red";
+		console.log("label");
+		label.style = "color:red;";
 		span.style.display = "block";
+		prazo.style = "border-color:red";
 	}
+};
+aporteMensal= (aporteM, label, span) => {
+	let aporteMensal = Number(aporteM.value);
+
+	if (aporteMensal > 1 || aporteMensal == "") {
+		label.style = "";
+		span.style.display = "";
+		aporteM.style = "";
+		
+		
+	} else {
+		console.log("label");
+		label.style = "color:red;";
+		span.style.display = "block";
+		aporteM.style = "border-color:red";
+	}
+	
 
 };
+
+
+
+
+
+
+
+
 ///pegando os indicadores
 
 let url = "http://localhost:3000/indicadores";
