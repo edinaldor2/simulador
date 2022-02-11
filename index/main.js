@@ -8,7 +8,6 @@ console.log(btns);
 let cor = (colorido) => {
 	colorido.style.background = "var(--color2)";
 	colorido.style.color = "white";
-
 };
 let reset = (resetado) => {
 	resetado.style.background = "";
@@ -38,7 +37,22 @@ function fXd(element) {
 	cor(element);
 	reset(btns[2]);
 	reset(btns[3]);
+	var lwc = element.value.toLowerCase()
+	return lwc
 }
+console.log()
+
+// pegando os filtros
+
+let simulacao = (rendimentos, indexacao) => {
+	console.log(rendimentos);
+	console.log(indexacao);
+
+	// let url =`http://localhost:3000/simulaç?tipoIndexacao=:${indexacao}&tipoRendimento=:${rendimentos}`
+	// fetch(url).then((res)=>{
+	// 	console.log(res)
+	// })
+};
 // validando os  inputs
 
 function validar() {
