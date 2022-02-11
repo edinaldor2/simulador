@@ -12,6 +12,7 @@
 	--color1: #efefef;
 	--color2: #ed8e53;
 	--color3: #969696;
+
 	--color-font: black;
 	--font: Lato;
 }
@@ -27,9 +28,9 @@
 	text-align: center;
 	margin: 10px 0px;
 }
-#container-sections{
-	background-color: #ed8e53;
+#container-sections {
 	display: flex;
+	gap: 10em;
 }
 /* começo do simulador */
 .container-simulator {
@@ -39,9 +40,6 @@
 #container-forms {
 	max-width: 500px;
 	margin-top: 10px;
-	display: flex;
-
-	gap: 40px;
 }
 .container-rend-index {
 	margin: 15px 0px;
@@ -77,20 +75,20 @@
 
 form {
 	display: flex;
-	
+	gap: 2em;
+	align-items: center;
 }
 label {
 	max-width: max-content;
+	margin: 1px;
 }
 
 input[type="text"] {
 	margin-top: 10px;
 	border-width: 0 0 1px 0;
 	background-color: transparent;
-	
+
 	padding: 2px;
-	-moz-appearance: textfield;
-	appearance: textfield;
 }
 input[type="text"]:focus {
 	box-shadow: 0 0 0 0;
@@ -104,7 +102,7 @@ span {
 }
 
 label p {
-	font-size: 13px;
+	font-size: 14px;
 }
 /* butoes de açoes */
 .container-buttons {
@@ -140,7 +138,25 @@ button:hover {
 }
 
 /* segunda seção */
-.container-result{
-	
-	background-color: black;
+.container-results {
+	max-width: 90%;
+}
+.results {
+	display: grid;
+	grid-template: auto auto / auto auto auto;
+	gap: 1.5em;
+	padding: 3em 0;
+}
+.result {
+	background: #efefef;
+	width: 14em;
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.486);
+	height: 6em;
+	text-align: center;
+}
+.result > h3 {
+	margin-bottom: 2em;
+}
+.green > p {
+	color: green;
 }

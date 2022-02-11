@@ -22,10 +22,20 @@
 									<div>
 										<small>Rendimentos</small>
 										<div class="container-rend-index">
-											<button id="liquido" class="rend" onclick="color()">
-												Líquido
-											</button>
-											<button id="bruto" class="rend">bruto</button>
+											<input
+												type="button"
+												id="liquido"
+												class="rend btns"
+												onclick="lqd(this)"
+												value="Líquido"
+											/>
+											<input
+												type="button"
+												id="bruto"
+												class="rend btns"
+												value="Bruto"
+												onclick="brt(this)"
+											/>
 										</div>
 										<label class="cont-inputs" for="aporte-inicial">
 											<p><small>Aporte inicial</small></p>
@@ -57,15 +67,31 @@
 											<p><small>IPCA(ao ano)</small></p>
 											<input type="text" name="ipca" id="ipca" readonly />
 										</label>
-										
 									</div>
 									<div>
-										
 										<small>Tipos de indexação</small>
 										<div class="container-rend-index">
-											<button id="pre" class="index">PRÉ</button>
-											<button id="pos" class="index">POS</button>
-											<button id="fixado" class="index">FIXADO</button>
+											<input
+												onclick="pRe(this)"
+												type="button"
+												id="pre"
+												class="index btns"
+												value="PRÉ"
+											/>
+											<input
+											onclick="pOs(this)"
+												type="button"
+												id="pos"
+												class="index btns"
+												value="PÓS"
+											/>
+											<input
+											onclick="fXd(this)"
+												type="button"
+												id="fixado"
+												class="index btns"
+												value="FIXADO"
+											/>
 										</div>
 										<label class="cont-inputs" for="aporte-mensal">
 											<p><small>Aporte Mensal</small></p>
@@ -90,7 +116,9 @@
 												id="rentabilidade"
 											/>
 											<span
-												><small>Rentabilidade tem que ser um número.</small></span
+												><small
+													>Rentabilidade tem que ser um número.</small
+												></span
 											> </label
 										><br />
 										<label for="cdi">
@@ -99,13 +127,41 @@
 										</label>
 									</div>
 								</form>
-								
 							</div>
 						</div>
 						<div class="container-buttons">
 							<button class="acoes" id="limpar">Limpar campos</button>
 							<button class="acoes" id="simular">Simular</button>
 						</div>
+					</section>
+					<section class="container-results">
+						<h2>Resultado da Simulação</h2>
+						<article class="results">
+							<div class="result">
+								<h3>Valor Final Bruto</h3>
+								<p>R$5555,00</p>
+							</div>
+							<div class="result">
+								<h3>Aliquota do IR</h3>
+								<p>20%</p>
+							</div>
+							<div class="result">
+								<h3>Valor Pago em IR</h3>
+								<p>R$45545445,000</p>
+							</div>
+							<div class="result green">
+								<h3>Valor Final Líquido</h3>
+								<p>R56.555444,55</p>
+							</div>
+							<div class="result">
+								<h3>Valor Total Investido</h3>
+								<p>R$554555,00</p>
+							</div>
+							<div class="result green">
+								<h3>Ganho Líquido</h3>
+								<p>R$47555555,00</p>
+							</div>
+						</article>
 					</section>
 				</div>
 			</main>
