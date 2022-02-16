@@ -1,5 +1,27 @@
-/*mudar a cor do butoes e acrescentar um checked
- */
+///pegando os indicadores
+
+onload = () => {
+	let url = "http://localhost:3000/indicadores";
+	fetch(url)
+		.then((response) => {
+			return response.json();
+		})
+		.then((data) => {
+			// chama as funçoes
+			ipca(data[1].valor);
+			cdi(data[0].valor);
+		});
+
+	let ipca = (valueIpca) => {
+		let ipca = document.getElementById("ipca");
+		ipca.value = `${valueIpca}%`;
+	};
+
+	let cdi = (valueCdi) => {
+		let cdi = document.getElementById("cdi");
+		cdi.value = `${valueCdi}%`;
+	};
+};
 
 // elementos selecionados
 let btns = document.querySelectorAll("input.btns");
@@ -67,6 +89,7 @@ let choice = (data) => {
 	let objescolhido = data.filter(filtro);
 	transfer(objescolhido);
 };
+
 // tranfirindo os dados para o front
 let transfer = (objescolhido) => {
 	let results = document.querySelectorAll(".result");
@@ -84,6 +107,7 @@ let transfer = (objescolhido) => {
 	// Ganho Liquido
 	ganhoLiquido(results[5], objt);
 };
+
 let valorFinalBruto = (results, objescolhido) => {
 	let value = objescolhido.valorFinalBruto.toLocaleString("pt-br", {
 		style: "currency",
@@ -198,27 +222,4 @@ aporteMensal = (aporteM, label, span) => {
 		span.style.display = "block";
 		aporteM.style = "border-color:red";
 	}
-};
-
-///pegando os indicadores
-
-let url = "http://localhost:3000/indicadores";
-fetch(url)
-	.then((response) => {
-		return response.json();
-	})
-	.then((data) => {
-		// chama as funçoes
-		ipca(data[1].valor);
-		cdi(data[0].valor);
-	});
-
-let ipca = (valueIpca) => {
-	let ipca = document.getElementById("ipca");
-	ipca.value = `${valueIpca}%`;
-};
-
-let cdi = (valueCdi) => {
-	let cdi = document.getElementById("cdi");
-	cdi.value = `${valueCdi}%`;
 };
