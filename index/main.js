@@ -1,8 +1,10 @@
 /*mudar a cor do butoes e acrescentar um checked
  */
+
 // elementos selecionados
 let btns = document.querySelectorAll("input.btns");
-console.log(btns);
+let index = "";
+let rend = "";
 
 //
 let cor = (colorido) => {
@@ -17,42 +19,132 @@ let reset = (resetado) => {
 function lqd(element) {
 	cor(element);
 	reset(btns[1]);
+	return (rend = "liquido");
 }
 function brt(element) {
 	cor(element);
 	reset(btns[0]);
+	return (rend = "bruto");
 }
 // tipos de indexação
 function pRe(element) {
 	cor(element);
 	reset(btns[3]);
+
 	reset(btns[4]);
+	return (index = "pre");
 }
 function pOs(element) {
 	cor(element);
 	reset(btns[2]);
 	reset(btns[4]);
+	return (index = "pos");
 }
 function fXd(element) {
 	cor(element);
 	reset(btns[2]);
 	reset(btns[3]);
-	var lwc = element.value.toLowerCase()
-	return lwc
+	return (index = "ipca");
 }
-console.log()
+// chamando as simulações
+function simulation() {
+	const url = `http://localhost:3000/simulacoes`;
 
-// pegando os filtros
-
-let simulacao = (rendimentos, indexacao) => {
-	console.log(rendimentos);
-	console.log(indexacao);
-
-	// let url =`http://localhost:3000/simulaç?tipoIndexacao=:${indexacao}&tipoRendimento=:${rendimentos}`
-	// fetch(url).then((res)=>{
-	// 	console.log(res)
-	// })
+	fetch(url)
+		.then((response) => {
+			return response.json();
+		})
+		.then((data) => {
+			choice(data);
+		});
+}
+//callback
+let filtro = (filtrado) => {
+	return filtrado.tipoIndexacao == index && filtrado.tipoRendimento == rend;
 };
+// escolhendo o objetos selecionados
+let choice = (data) => {
+	let objescolhido = data.filter(filtro);
+	transfer(objescolhido);
+};
+// tranfirindo os dados para o front
+let transfer = (objescolhido) => {
+	let results = document.querySelectorAll(".result");
+	let objt = objescolhido[0];
+	// Valor Final Bruto
+	valorFinalBruto(results[0], objt);
+	// Aliquota
+	aliquota(results[1], objt);
+	// Valor Pago em IR
+	valorPagoIR(results[2], objt);
+	// Valor Final Liquido
+	valorFinalLiquido(results[3], objt);
+	// Valor Total Investido
+	valorTotalInvestido(results[4], objt);
+	// Ganho Liquido
+	ganhoLiquido(results[5], objt);
+};
+let valorFinalBruto = (results, objescolhido) => {
+	let value = objescolhido.valorFinalBruto.toLocaleString("pt-br", {
+		style: "currency",
+		currency: "BRL",
+	});
+	valorBruto = results;
+	valorBruto.innerHTML = `<h3>Valor Final Bruto</h3>
+	<p>${value}</p>`;
+};
+let aliquota = (results, objescolhido) => {
+	let value = objescolhido.aliquotaIR;
+	let valorAliquota = results;
+
+	valorAliquota.innerHTML = `<h3>Aliquota do IR</h3>
+	<p>${value}%</p>`;
+};
+let valorPagoIR = (results, objescolhido) => {
+	let value = objescolhido.valorPagoIR.toLocaleString("pt-br", {
+		style: "currency",
+		currency: "BRL",
+	});
+	let pagoIR = results;
+	pagoIR.innerHTML = `		<h3>Valor Pago em IR</h3>
+	<p>${value}</p>
+
+	`;
+};
+let valorFinalLiquido = (results, objescolhido) => {
+	let value = objescolhido.valorFinalLiquido.toLocaleString("pt-br", {
+		style: "currency",
+		currency: "BRL",
+	});
+	let pagoIR = results;
+	pagoIR.innerHTML = `<h3>Valor Final Líquido</h3>
+	<p>${value}</p>
+
+	`;
+};
+let valorTotalInvestido = (results, objescolhido) => {
+	let value = objescolhido.valorTotalInvestido.toLocaleString("pt-br", {
+		style: "currency",
+		currency: "BRL",
+	});
+	let pagoIR = results;
+	pagoIR.innerHTML = `<h3>Valor Total Investido</h3>
+	<p>${value}</p>
+
+	`;
+};
+let ganhoLiquido = (results, objescolhido) => {
+	let value = objescolhido.ganhoLiquido.toLocaleString("pt-br", {
+		style: "currency",
+		currency: "BRL",
+	});
+	let pagoIR = results;
+	pagoIR.innerHTML = `<h3>Ganho Líquido</h3>
+	<p>${value}</p>
+
+	`;
+};
+
 // validando os  inputs
 
 function validar() {
