@@ -223,3 +223,11 @@ aporteMensal = (aporteM, label, span) => {
 		aporteM.style = "border-color:red";
 	}
 };
+
+function limpar(){
+let campos = document.getElementsByClassName("text");
+for (let i = 0; i < campos.length; i++) {
+	campos[i].value = "";
+}
+}
+
