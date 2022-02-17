@@ -69,7 +69,118 @@ function fXd(element) {
 	return (index = "ipca");
 }
 // chamando as simulações
+// validando os  inputs
+
+function validar() {
+	let input = document.getElementsByClassName("text");
+	let label = document.getElementsByClassName("cont-inputs");
+
+	let span = document.getElementsByTagName("span");
+
+	aporteInicial(input[0], label[0], span[0]);
+	prazo(input[1], label[1], span[1]);
+
+	aporteMensal(input[2], label[2], span[2]);
+}
+
+let aporteInicial = (aporte, label, span) => {
+	let aporteInicial = Number(
+		aporte.value
+	); 
+	
+	
+  
+
+	if (aporteInicial >=0 || aporteInicial == "" ) {
+		label.style = "";
+		span.style.display = "";
+		aporte.style = "";
+		
+	let cifrao = aporteInicial.toLocaleString("pt-br", {
+		style: "currency",
+		currency: "BRL",
+	})
+	aporte.value = cifrao
+	let vezes = 0
+	for (x = 1;vezes= x;vezes++ ){
+		console.log(vezes)
+	}
+	
+		
+	} else {
+		label.style = "color:red;";
+		span.style.display = "block";
+		aporte.style = "border-color:red";
+	}
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let prazo = (prazo, label, span) => {
+	let prazoNumber = Number(prazo.value);
+
+	if (prazoNumber > 0 || prazoNumber == "" ) {
+		label.style = "";
+		span.style.display = "";
+		prazo.style = "";
+	} else {
+		label.style = "color:red;";
+		span.style.display = "block";
+		prazo.style = "border-color:red";
+	}
+};
+aporteMensal = (aporteM, label, span) => {
+	let aporteMensal = Number(aporteM.value);
+
+	if (aporteMensal > 1 || aporteMensal == "") {
+		label.style = "";
+		span.style.display = "";
+		aporteM.style = "";
+	} else {
+		label.style = "color:red;";
+		span.style.display = "block";
+		aporteM.style = "border-color:red";
+	}
+};
+
 function simulation() {
+	
 	const url = `http://localhost:3000/simulacoes`;
 
 	fetch(url)
@@ -92,6 +203,8 @@ let choice = (data) => {
 
 // tranfirindo os dados para o front
 let transfer = (objescolhido) => {
+
+
 	let results = document.querySelectorAll(".result");
 	let objt = objescolhido[0];
 	// Valor Final Bruto
@@ -107,7 +220,7 @@ let transfer = (objescolhido) => {
 	// Ganho Liquido
 	ganhoLiquido(results[5], objt);
 };
-
+// pegando as propiedades especificas e colocando em seu devido lugar
 let valorFinalBruto = (results, objescolhido) => {
 	let value = objescolhido.valorFinalBruto.toLocaleString("pt-br", {
 		style: "currency",
@@ -130,10 +243,8 @@ let valorPagoIR = (results, objescolhido) => {
 		currency: "BRL",
 	});
 	let pagoIR = results;
-	pagoIR.innerHTML = `		<h3>Valor Pago em IR</h3>
-	<p>${value}</p>
-
-	`;
+	pagoIR.innerHTML = `<h3>Valor Pago em IR</h3>
+	<p>${value}</p>`;
 };
 let valorFinalLiquido = (results, objescolhido) => {
 	let value = objescolhido.valorFinalLiquido.toLocaleString("pt-br", {
@@ -169,65 +280,12 @@ let ganhoLiquido = (results, objescolhido) => {
 	`;
 };
 
-// validando os  inputs
+// limpa os campos
 
-function validar() {
-	let input = document.getElementsByClassName("text");
-	let label = document.getElementsByClassName("cont-inputs");
 
-	let span = document.getElementsByTagName("span");
-
-	aporteInicial(input[0], label[0], span[0]);
-	prazo(input[1], label[1], span[1]);
-
-	aporteMensal(input[2], label[2], span[2]);
-}
-
-let aporteInicial = (aporte, label, span) => {
-	let aporteInicial = Number(aporte.value);
-
-	if (aporteInicial > 1 || aporteInicial == "") {
-		label.style = "";
-		span.style.display = "";
-		aporte.style = "";
-	} else {
-		label.style = "color:red;";
-		span.style.display = "block";
-		aporte.style = "border-color:red";
+function limpar() {
+	let campos = document.getElementsByClassName("text");
+	for (let i = 0; i < campos.length; i++) {
+		campos[i].value = "";
 	}
-};
-
-let prazo = (prazo, label, span) => {
-	let prazoNumber = Number(prazo.value);
-
-	if (prazoNumber > 0 || prazoNumber == "") {
-		label.style = "";
-		span.style.display = "";
-		prazo.style = "";
-	} else {
-		label.style = "color:red;";
-		span.style.display = "block";
-		prazo.style = "border-color:red";
-	}
-};
-aporteMensal = (aporteM, label, span) => {
-	let aporteMensal = Number(aporteM.value);
-
-	if (aporteMensal > 1 || aporteMensal == "") {
-		label.style = "";
-		span.style.display = "";
-		aporteM.style = "";
-	} else {
-		label.style = "color:red;";
-		span.style.display = "block";
-		aporteM.style = "border-color:red";
-	}
-};
-
-function limpar(){
-let campos = document.getElementsByClassName("text");
-for (let i = 0; i < campos.length; i++) {
-	campos[i].value = "";
 }
-}
-
