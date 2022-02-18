@@ -76,6 +76,7 @@ function validar() {
 	let label = document.getElementsByClassName("cont-inputs");
 
 	let span = document.getElementsByTagName("span");
+	
 
 	aporteInicial(input[0], label[0], span[0]);
 	prazo(input[1], label[1], span[1]);
@@ -84,78 +85,31 @@ function validar() {
 }
 
 let aporteInicial = (aporte, label, span) => {
-	let aporteInicial = Number(
-		aporte.value
-	); 
+	let aporteInicial = +aporte.value;
 	
 	
-  
 
-	if (aporteInicial >=0 || aporteInicial == "" ) {
+	
+	
+	if ( aporteInicial >= 0 ||aporteInicial == "" ) {
 		label.style = "";
 		span.style.display = "";
 		aporte.style = "";
 		
-	let cifrao = aporteInicial.toLocaleString("pt-br", {
-		style: "currency",
-		currency: "BRL",
-	})
-	aporte.value = cifrao
-	let vezes = 0
-	for (x = 1;vezes= x;vezes++ ){
-		console.log(vezes)
-	}
-	
 		
-	} else {
+	}else {
 		label.style = "color:red;";
 		span.style.display = "block";
 		aporte.style = "border-color:red";
 	}
+	
+
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 let prazo = (prazo, label, span) => {
 	let prazoNumber = Number(prazo.value);
 
-	if (prazoNumber > 0 || prazoNumber == "" ) {
+	if (prazoNumber > 0 || prazoNumber == "") {
 		label.style = "";
 		span.style.display = "";
 		prazo.style = "";
@@ -180,7 +134,6 @@ aporteMensal = (aporteM, label, span) => {
 };
 
 function simulation() {
-	
 	const url = `http://localhost:3000/simulacoes`;
 
 	fetch(url)
@@ -203,8 +156,6 @@ let choice = (data) => {
 
 // tranfirindo os dados para o front
 let transfer = (objescolhido) => {
-
-
 	let results = document.querySelectorAll(".result");
 	let objt = objescolhido[0];
 	// Valor Final Bruto
@@ -281,7 +232,6 @@ let ganhoLiquido = (results, objescolhido) => {
 };
 
 // limpa os campos
-
 
 function limpar() {
 	let campos = document.getElementsByClassName("text");

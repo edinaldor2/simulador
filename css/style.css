@@ -76,7 +76,7 @@
 form {
 	display: flex;
 	gap: 2em;
-	align-items: center;
+	align-items: stretch;
 }
 label {
 	max-width: max-content;
@@ -89,6 +89,9 @@ input[type="text"] {
 	background-color: transparent;
 
 	padding: 2px;
+}
+input[type="text"]::before{
+content: "R$";
 }
 input[type="text"]:focus {
 	box-shadow: 0 0 0 0;
@@ -159,4 +162,37 @@ button:hover {
 }
 .green > p {
 	color: green;
+}
+
+@media screen and ( max-width:500px) {
+	
+	.container{
+		max-width: 100vw;
+		margin: auto;
+		
+	}
+	#container-sections {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3em
+	;
+	
+
+
+}
+h1{
+	font-size: 31px;
+}
+.results {
+	
+	grid-template: auto auto / auto  auto;
+	
+}
+.result {
+	background: #efefef;
+	width: 12em;
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.486);
+	height: 6em;
+	text-align: center;
+}
 }
