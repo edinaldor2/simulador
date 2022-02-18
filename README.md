@@ -15,7 +15,10 @@ Esse site foi um desafio tecnico da empresa   EQI investimento. Meu objetivo era
   - `cd simulador-main`
   - `npm install`
   - `npx json-server db.json`
-- o site estará localizado em `http://localhost:3000/` 
+- o site estará localizado em `http://localhost:3000/`; 
+- escolha um tipo de rendimento e indexação; 
+- preencha os campos ;
+- e clique em simular.
 
 
 ## Linguagens e conceitos utilizados 
