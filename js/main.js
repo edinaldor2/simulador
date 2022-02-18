@@ -121,7 +121,7 @@ aporteMensal = (aporteM, label, span) => {
 
 	const dadoTratado = +aporteMensal.replace(validacao, "");
 
-	if (dadoTratado >=0 || aporteMensal == "") {
+	if (dadoTratado >= 0 || aporteMensal == "") {
 		label.style = "";
 		span.style.display = "";
 		aporteM.style = "";
@@ -135,7 +135,7 @@ rentabilidade = (rent, label, span) => {
 	let rentabilidade = rent.value;
 	let validacao = new RegExp(/R\$[/s]?/gi);
 	const dadoTratado = +rentabilidade.replace(validacao, "");
-	if (dadoTratado >=0  ||rentabilidade == "") {
+	if (dadoTratado >= 0 || rentabilidade == "") {
 		label.style = "";
 		span.style.display = "";
 		rentabilidade.style = "";
@@ -148,7 +148,6 @@ rentabilidade = (rent, label, span) => {
 };
 
 function simulation() {
-	
 	const url = `http://localhost:3000/simulacoes`;
 
 	fetch(url)
@@ -186,7 +185,7 @@ let transfer = (objescolhido) => {
 	// Ganho Liquido
 	ganhoLiquido(results[5], objt);
 	const resultado = document.querySelector(".container-results");
-	resultado.style = "display:block"
+	resultado.style = "display:block";
 };
 // pegando as propiedades especificas e colocando em seu devido lugar
 let valorFinalBruto = (results, objescolhido) => {
