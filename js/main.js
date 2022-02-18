@@ -76,34 +76,30 @@ function validar() {
 	let label = document.getElementsByClassName("cont-inputs");
 
 	let span = document.getElementsByTagName("span");
-	
 
 	aporteInicial(input[0], label[0], span[0]);
 	prazo(input[1], label[1], span[1]);
 
 	aporteMensal(input[2], label[2], span[2]);
+	rentabilidade(input[3], label[3], span[3]);
 }
 
 let aporteInicial = (aporte, label, span) => {
-	let aporteInicial = +aporte.value;
-	
-	
+	let aporteInicial = aporte.value;
 
-	
-	
-	if ( aporteInicial >= 0 ||aporteInicial == "" ) {
+	let validacao = new RegExp(/R\$[\s]?/gi);
+
+	const dadoTratado = +aporteInicial.replace(validacao, "");
+
+	if (dadoTratado >= 0 || aporteInicial == "") {
 		label.style = "";
 		span.style.display = "";
 		aporte.style = "";
-		
-		
-	}else {
+	} else {
 		label.style = "color:red;";
 		span.style.display = "block";
 		aporte.style = "border-color:red";
 	}
-	
-
 };
 
 let prazo = (prazo, label, span) => {
@@ -120,9 +116,12 @@ let prazo = (prazo, label, span) => {
 	}
 };
 aporteMensal = (aporteM, label, span) => {
-	let aporteMensal = Number(aporteM.value);
+	let aporteMensal = aporteM.value;
+	let validacao = new RegExp(/R\$[\s]?/gi);
 
-	if (aporteMensal > 1 || aporteMensal == "") {
+	const dadoTratado = +aporteMensal.replace(validacao, "");
+
+	if (dadoTratado >=0 || aporteMensal == "") {
 		label.style = "";
 		span.style.display = "";
 		aporteM.style = "";
@@ -132,8 +131,24 @@ aporteMensal = (aporteM, label, span) => {
 		aporteM.style = "border-color:red";
 	}
 };
+rentabilidade = (rent, label, span) => {
+	let rentabilidade = rent.value;
+	let validacao = new RegExp(/R\$[/s]?/gi);
+	const dadoTratado = +rentabilidade.replace(validacao, "");
+	if (dadoTratado >=0  ||rentabilidade == "") {
+		label.style = "";
+		span.style.display = "";
+		rentabilidade.style = "";
+		rent.value = dadoTratado / 100;
+	} else {
+		label.style = "color:red;";
+		span.style.display = "block";
+		rentabilidade.style = "border-color:red";
+	}
+};
 
 function simulation() {
+	
 	const url = `http://localhost:3000/simulacoes`;
 
 	fetch(url)
@@ -170,6 +185,8 @@ let transfer = (objescolhido) => {
 	valorTotalInvestido(results[4], objt);
 	// Ganho Liquido
 	ganhoLiquido(results[5], objt);
+	const resultado = document.querySelector(".container-results");
+	resultado.style = "display:block"
 };
 // pegando as propiedades especificas e colocando em seu devido lugar
 let valorFinalBruto = (results, objescolhido) => {

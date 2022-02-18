@@ -40,11 +40,12 @@
 										<label class="cont-inputs" for="aporte-inicial">
 											<p><small>Aporte inicial</small></p>
 											<input
-											onblur="validar()"
+												onblur="validar()"
 												type="text"
 												name="aporte-inicial"
 												id="aporte-inicial"
 												class="text"
+												value="R$"
 											/>
 											<span
 												><small>Aporte tem que ser um número.</small></span
@@ -53,7 +54,7 @@
 										<label class="cont-inputs" for="prazo">
 											<p><small>Prazo (em meses)</small></p>
 											<input
-												onkeyup="validar()"
+												onblur="validar()"
 												type="text"
 												class="text"
 												name="prazo"
@@ -96,11 +97,12 @@
 										<label class="cont-inputs" for="aporte-mensal">
 											<p><small>Aporte Mensal</small></p>
 											<input
-												onkeyup="validar()"
+												onblur="validar()"
 												class="text"
 												type="text"
 												name="aporte-mensal"
 												id="aporte-mensal"
+												value="R$"
 											/>
 											<span
 												><small>Aporte tem que ser um número.</small></span
@@ -109,7 +111,7 @@
 										<label class="cont-inputs" for="rentabilidade">
 											<p><small>Rentabilidade</small></p>
 											<input
-												onkeyup="validar()"
+												onblur="validar()"
 												class="text"
 												type="text"
 												name="rentabilidade"
@@ -153,5 +155,5 @@
 			</main>
 		</div>
 	</body>
-	<script src="js/main.js"></script>
+	<script src="js/main.js"> </script>
 </html>
