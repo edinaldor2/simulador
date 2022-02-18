@@ -57,4 +57,5 @@ Esse site foi um desafio tecnico da empresa   EQI investimento. Meu objetivo era
   
 ##  O que eu aprendi 
   
-  Esse desafio foi muito bom para mim em me fazer praticar com o js ,css e html, pude constatar que me tirou da sona de conforto me fazendo a procurar sobre uma tag especifi.Ainda bem que exitiu esse desafio em minha vida!Agora é so evoluçao.
+  Esse desafio foi muito bom para mim em me fazer praticar com o js ,css e html, pude constatar que me tirou da sona de conforto me fazendo a procurar sobre uma tag especifi.Ainda bem que exitiu esse desafio em minha vida!Agora é so evoluçao. utilizei a extensão "Pettier" para padronizar as linguagens
+  
